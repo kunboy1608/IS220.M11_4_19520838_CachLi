@@ -1,0 +1,41 @@
+﻿@model IEnumerable<DeOn_CachLy.Models.DiemCachLyModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TenDiemCachLy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiaChi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenDiemCachLy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MaDiemCachLy">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MaDiemCachLy">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaDiemCachLy">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
